@@ -1,0 +1,25 @@
+mod main
+
+const std = import("std")
+
+use string.{trim_space, dedent}
+
+fn main() {
+	const println = std.log.println
+	const $html = std.fmt.$f
+
+	const name = "Mom"
+	const html_content = html`
+		<div>
+			<p>Hi {name}</p>
+		</div>
+	`.dedent().trim_space()
+	println(html_content)
+}
+
+/*
+./multiline_string
+<div>
+	<p>Hi {name}</p>
+</div>
+*/
